@@ -1,30 +1,59 @@
-# command-line-emailer
-A command line email tool, to help extend the life of some legacy ASP web applications.
+# Command Line Emailer
+
+The `CDO.Message` object has documented issues communicating with SMTP servers
+when `STARTTLS` is required.  This can make it difficult to send email messages
+through modern email servers from classic ASP web applications.
+
+Command Line Emailer is a simple yet flexible tool that was built
+to help extend the life of some classic ASP web applications,
+although it can be used for other purposes, like as part of command line scripts.
+
+It is best used for one-off email messages, like account activations
+and password recoveries.
+
+**Node.js is required.**
+**Don't forget to run `npm install` to grab the dependencies.**
 
 ## Usage
 
-``` bash
+```bash
 node sendMail [config] [template] [toEmail] [templateParameters]
 ```
 
-**All command parameters are required!**
+**The first three command parameters are required!**
 
-`[config]`
-- The name of the config file in the config folder.
-- No `.js` extension necessary.
+`[config]` \*Required
 
-`[template]`
-- The name of the template configuration file in the template folder.
-- No `.js` extension necessary.
+-   The name of the config file in the config folder.
+-   No `.js` extension necessary.
+-   See [sample-config.ts](config/sample-config.ts) for help getting started.
 
-`[toEmail]`
-- The email address that should be in the to field of the email.
+`[template]` \*Required
 
-`[templateParameters]`
-- Any parameters that should be filled in.
+-   The name of the template configuration file in the template folder.
+-   No `.js` extension necessary.
+-   See [sample-template.ts](template/sample-template.ts) for help getting started.
+
+`[toEmail]` \*Required
+
+-   The email address that will be receiving the email message.
+
+`[templateParameters]` \*Optional
+
+-   Any parameters that should be filled in.
+-   Include the parameter name and parameter value, separated by an equals sign.
+-   Use double quotes around parameters that have spaces.
 
 ## Example
 
 ```bash
-node sendMail config passwordRecovery user@example.com userName=user password=newP@ssword
+node sendMail config passwordRecovery user@example.com "userName=User Name" password=newP@ssword
+```
+
+## Classic ASP Example
+
+```ASP
+Set objShell = CreateObject("WScript.Shell")
+
+objShell.run("node c:/pathTo/commandLineEmailer/sendMail config passwordRecovery user@example.com userName=user password=newP@ssword")
 ```

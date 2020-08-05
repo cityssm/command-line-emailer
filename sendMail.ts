@@ -111,6 +111,10 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+/*
+ * Construct the message.
+ */
+
 const messageConfig: nodemailer.SendMailOptions = {
   from: template.from,
   to: toEmailAddress,
@@ -122,6 +126,10 @@ if (template.bodyIsHTML) {
 } else {
   messageConfig.text = emailBody;
 }
+
+/*
+ * Send the message.
+ */
 
 transporter.sendMail(messageConfig, function(err, info) {
 
