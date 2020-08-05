@@ -32,7 +32,7 @@ node sendMail [config] [template] [toEmail] [templateParameters]
 
 -   The name of the template configuration file in the template folder.
 -   No `.js` extension necessary.
--   See [sample-template.ts](template/sample-template.ts) for help getting started.
+-   See [sample-template.ts](templates/sample-template.ts) for help getting started.
 
 `[toEmail]` \*Required
 
