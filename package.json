@@ -1,6 +1,6 @@
 {
   "name": "command-line-emailer",
-  "version": "1.0.0",
+  "version": "0.5.0",
   "description": "A command line email tool, to help extend the life of some legacy ASP web applications.",
   "main": "sendMail.js",
   "scripts": {
