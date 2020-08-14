@@ -1,6 +1,7 @@
 # Command Line Emailer
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c689a67783fc4dcebe0847f049809a6f)](https://app.codacy.com/gh/cityssm/command-line-emailer?utm_source=github.com&utm_medium=referral&utm_content=cityssm/command-line-emailer&utm_campaign=Badge_Grade_Dashboard)
+[![Maintainability](https://api.codeclimate.com/v1/badges/6ecf6cbee122a2e28f36/maintainability)](https://codeclimate.com/github/cityssm/command-line-emailer/maintainability)
 
 The `CDO.Message` object has documented issues communicating with SMTP servers
 when `STARTTLS` is required.  This can make it difficult to send email messages
