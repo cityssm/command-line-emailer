@@ -2,10 +2,10 @@ import type { ConfigFile } from "../types";
 
 const config: ConfigFile = {
   smtp: {
-    server: "smtp.example.com",
+    server: "smtp.ethereal.email",
     port: 587,
-    userName: "userName",
-    password: "p@ssword"
+    userName: "deon74@ethereal.email",
+    password: "mPkWFJuvtrmj3vmDvp"
   }
 };
 

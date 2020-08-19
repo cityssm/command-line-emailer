@@ -9,3 +9,5 @@ export const template: EmailTemplate = {
   bodyIsHTML: true,
   requiredParameters: ["userName"]
 };
+
+module.exports = template;

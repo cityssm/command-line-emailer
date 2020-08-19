@@ -10,3 +10,4 @@ exports.template = {
     bodyIsHTML: true,
     requiredParameters: ["userName"]
 };
+module.exports = exports.template;

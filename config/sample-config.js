@@ -2,10 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const config = {
     smtp: {
-        server: "smtp.example.com",
+        server: "smtp.ethereal.email",
         port: 587,
-        userName: "userName",
-        password: "p@ssword"
+        userName: "deon74@ethereal.email",
+        password: "mPkWFJuvtrmj3vmDvp"
     }
 };
 module.exports = config;
