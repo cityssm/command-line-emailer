@@ -4,8 +4,8 @@
   "description": "A command line email tool, to help extend the life of some legacy ASP web applications.",
   "main": "sendMail.js",
   "scripts": {
-    "test": "mocha --timeout 20000",
-    "coverage": "nyc npm run test"
+    "test": "snyk test && mocha --timeout 20000",
+    "coverage": "nyc mocha --timeout 20000"
   },
   "repository": {
     "type": "git",
@@ -32,8 +32,9 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "mocha": "^8.1.3",
+    "mocha": "^8.2.0",
     "nyc": "^15.1.0",
+    "snyk": "^1.421.1",
     "typescript": "^4.0.3"
   }
 }
