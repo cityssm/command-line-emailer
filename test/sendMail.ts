@@ -108,7 +108,7 @@ describe("sendMail", () => {
       });
 
     sendMail.on("close", (code) => {
-      assert.equal(code, 0);
+      assert.strictEqual(code, 0);
       done();
     });
   });

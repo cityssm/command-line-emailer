@@ -3,13 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const process = require("process");
 const nodemailer = require("nodemailer");
 const cmd = "node sendMail [config] [template] [toEmail] [templateParameters]";
-const args = process.argv;
-if (args.length < 5) {
+const arguments_ = process.argv;
+if (arguments_.length < 5) {
     console.error("Error: Incorrect format");
     console.log(cmd);
     process.exit(1);
 }
-const configFilePath = "./config/" + args[2] + ".js";
+const configFilePath = "./config/" + arguments_[2] + ".js";
 let config;
 try {
     config = require(configFilePath);
@@ -19,7 +19,7 @@ catch (e) {
     console.log(cmd);
     process.exit(1);
 }
-const templateFilePath = "./templates/" + args[3] + ".js";
+const templateFilePath = "./templates/" + arguments_[3] + ".js";
 let template;
 try {
     template = require(templateFilePath);
@@ -29,11 +29,11 @@ catch (e) {
     console.log(cmd);
     process.exit(1);
 }
-const toEmailAddress = args[4];
+const toEmailAddress = arguments_[4];
 const templateParameters = {};
-for (let index = 5; index < args.length; index += 1) {
-    const fullParameter = args[index];
-    if (!args[index].includes("=")) {
+for (let index = 5; index < arguments_.length; index += 1) {
+    const fullParameter = arguments_[index];
+    if (!arguments_[index].includes("=")) {
         console.error("Error: Invalid parameter " + fullParameter);
         console.log(cmd);
         process.exit(1);

@@ -10,9 +10,9 @@ const cmd = "node sendMail [config] [template] [toEmail] [templateParameters]";
  * Check the arguments
  */
 
-const args = process.argv;
+const arguments_ = process.argv;
 
-if (args.length < 5) {
+if (arguments_.length < 5) {
   console.error("Error: Incorrect format");
   console.log(cmd);
   process.exit(1);
@@ -22,7 +22,7 @@ if (args.length < 5) {
  * Load the config file
  */
 
-const configFilePath = "./config/" + args[2] + ".js";
+const configFilePath = "./config/" + arguments_[2] + ".js";
 
 let config: ConfigFile;
 
@@ -39,7 +39,7 @@ catch (e) {
  * Load the template
  */
 
-const templateFilePath = "./templates/" + args[3] + ".js";
+const templateFilePath = "./templates/" + arguments_[3] + ".js";
 
 let template: EmailTemplate;
 
@@ -56,7 +56,7 @@ catch (e) {
  * Get the email address
  */
 
-const toEmailAddress = args[4];
+const toEmailAddress = arguments_[4];
 
 /*
  * Load the command line parameters for use by the template.
@@ -64,11 +64,11 @@ const toEmailAddress = args[4];
 
 const templateParameters: { [parameterName: string]: string } = {};
 
-for (let index = 5; index < args.length; index += 1) {
+for (let index = 5; index < arguments_.length; index += 1) {
 
-  const fullParameter = args[index];
+  const fullParameter = arguments_[index];
 
-  if (!args[index].includes("=")) {
+  if (!arguments_[index].includes("=")) {
     console.error("Error: Invalid parameter " + fullParameter);
     console.log(cmd);
     process.exit(1);

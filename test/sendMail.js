@@ -83,7 +83,7 @@ describe("sendMail", () => {
             silent: true
         });
         sendMail.on("close", (code) => {
-            assert.equal(code, 0);
+            assert.strictEqual(code, 0);
             done();
         });
     });
